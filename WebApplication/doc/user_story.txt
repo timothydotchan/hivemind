@@ -1,0 +1,50 @@
+As a news reader
+dedicated page with news
+heading with links to different news papers.
+links must be from local newspaper and world newspaper
+twitter status related to news in the link
+
+As a blogger
+post / upload pictures
+write a story / news / blog
+write comments and like/hate comment and story
+able to detect hate comment / story and put as a scam
+
+As a tourist / traveler to Nepal
+view current events/tourist places about Nepal.
+view US travel news plus warning/issues
+info on hotel/lodges
+find deals if possible
+
+As an administrator
+contact us page
+weather/time label
+social status/update/like button
+
+PHOTO NEWS 
+VIDEO NEWS
+UTILITIES PAGES: Date Conversion, Calendar
+
+TARGETED AD
+collect all cookies from the browser + website itself 
+targeted google ad
+
+CLASSIFICATION OF NEWS
+based on keywords (using machine learning)
+
+RANKING OF NEWS
+based on view/relevance/hits 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

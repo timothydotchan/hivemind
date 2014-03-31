@@ -1,0 +1,72 @@
+.navbar{
+    border-color: silver;
+}
+
+
+
+/*
+.navbar{
+	background-color: white;
+    border-color: white;
+    color: #FFFFFF;	
+}
+.navbar-inverse .navbar-brand {
+    color: black;
+}
+
+#searchOutter{
+	text-align: center;
+
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    box-shadow: 1px 1px 2px #808080;
+    color: #FFFFFF;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin-bottom: 60px;
+}
+#footer {
+    background-color: #F5F5F5;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+#footer > .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+code {
+    font-size: 80%;
+}
+*/
+
+#footer {
+    background-color: #F5F5F5;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+#footer > .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+

@@ -1,0 +1,20 @@
+News technical guidelines
+
+https://support.google.com/news/answer/40796
+
+Google News uses a computer algorithm to automatically crawl news sites. To help our system determine which webpages are actually articles, your site should follow our Technical Guidelines.
+
+Here are some common technical issues you should consider:
+
+Article URLs. To make sure we only crawl new articles, please make sure your URLs are unique with at least 3 digits, and are permanent.
+
+Article Links. When our crawler scans your site, it looks for HTML links with anchor texts that includes at least a few words. We are also unable to crawl JavaScript, graphic links or links found in frames.
+
+Article formatting. Our crawler is only able to include HTML articles. This means we cannot crawl PDFs or other non-HTML formats.
+
+Robots.txt or metatags. In order for your content to be included in Google News, our user-agent must be able to crawl and index your site.
+
+Multimedia content. We currently are unable to include audio files or multimedia content; however, we can sometimes crawl supplementary text on pages with this type of content and do include some videos from YouTube.
+
+While not required, we highly recommend that you submit a Google News Sitemap through a Webmaster Tools account. Please note that you may receive errors if you submit your sitemap before your site has been reviewed and approved by our team.
+
