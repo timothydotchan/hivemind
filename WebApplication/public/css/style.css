@@ -59,18 +59,7 @@ code {
 }
 */
 
-#footer {
-    background-color: #F5F5F5;
-    bottom: 0;
-    height: 60px;
-    position: absolute;
-    width: 100%;
-}
 
-#footer > .container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 
 
