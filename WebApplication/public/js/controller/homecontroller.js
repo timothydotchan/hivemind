@@ -1,26 +1,30 @@
-var thinkRecursionApp= angular.module('thinkRecursionApp', []);
+var thinkRecursionApp= angular.module('thinkRecursionApp', ['ui.select2']);
+
 
 thinkRecursionApp.controller('HomeController', function ($scope, $http) {
     $scope.isCreatePollExpanded=false;
 
+    $scope.select2Options = {
+        'multiple': true,
+        'simple_tags': true,
+        'tags': ['true','false','yes','no'],
+        'maximumInputLength':10
+    };
+
     $scope.newPoll={
         question:"",
-        choices:[
-            {
-                name:""
-            },
-            {
-                name:""
-            }
-        ]
+        choices:[]
     }
-    $scope.addChoice=function(poll){
-        var choice ={ name:""}
-        poll.choices.push(choice);
-    }
+
     $scope.addPoll=function(polls, newPoll){
-        
-        polls.push(newPoll);
+        polls.push(angular.copy(newPoll));
+
+         var poll={
+                    question:"",
+                    choices:[]
+                }
+        $scope.newPoll= angular.copy(poll);
+        $scope.isCreatePollExpanded=false;
     }
 
     $scope.polls=[
@@ -56,6 +60,10 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http) {
     $scope.expandCreatePoll=function(){
         $scope.isCreatePollExpanded=true;
     }
+    $scope.hideCreatePoll=function(){
+        $scope.isCreatePollExpanded=false;
+    }
+
 
 /*
     $scope.fetchData=function(){

@@ -7,7 +7,7 @@
     margin-top: 5px; 
 }
 #top{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -17,6 +17,7 @@
     border-color: white;
     color: #FFFFFF;	
 }
+
 .navbar-inverse .navbar-brand {
     color: black;
 }

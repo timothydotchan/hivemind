@@ -19,6 +19,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/select2.css">
     <link href="css/style.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -39,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="../" class="navbar-brand" style="">Hivemind.</a>
+          <h1>Hivemind.</h1>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 
@@ -52,27 +53,24 @@
 
     <!-- Begin page content -->
     <div class="container">
+
         <h3>Ask the mind</h3>
         <div class="row">
           <div class="col-xs-5">
-            <input type="text" ng-focus="expandCreatePoll()"class="form-control input-sm" placeholder="Type your question" ng-model="newPoll.question">
+            <input type="text" theme="bootstrap" ng-focus="expandCreatePoll()"class="form-control input-sm" placeholder="Type your question" ng-model="newPoll.question">
           </div>
         </div>
         <form role="form" ng-show="isCreatePollExpanded" >
           <div style="margin-top:10px">
-            <label >Choices</label>
-            <span ng-repeat="choice in newPoll.choices">
-
-            <div class="row" style="margin-top:10px">
-              <div class="col-xs-3">
-                <input type="text" class="form-control input-sm" placeholder="" ng-model="choice.name">
-              </div>
+            <div>
+              <input style="width:375px;"  type="text" ui-select2="select2Options" ng-model="newPoll.choices">
+               <p class="help-block">Hit enter to create a choice. Minimum 2 choices.</p>
             </div>
-            </span>
          </div>
           </br>
-          <button class="btn btn-default" ng-click="addChoice(newPoll)"><i class="fa fa-plus"></i> Add Another</button>
-          <button class="btn btn-success" ng-click="addPoll(polls, newPoll)">Submit</button>
+          <button style="margin-left:265px;" class="btn btn-success" ng-click="addPoll(polls, newPoll)">Post</button>
+
+          <button class="btn btn-default" ng-click="hideCreatePoll()">Hide</button>
         </form>
 
         <h3>Open Polls</h3>
@@ -81,8 +79,8 @@
           <img class="user-profile-post-picture" src="http://a.disquscdn.com/1396297849/images/noavatar92.png" style="height:36px; width:36px"/>
 
           <h4><a>{{poll.question}}</a></h4>
-          <small>{{poll.dateTime}} by {{poll.author}}</small>
-          <small><i class="fa fa-comments"></i> {{poll.numberOfComments}} comments</small>
+          <small>{{poll.dateTime}} by <a href="#">{{poll.author}} </a> </small>
+          <small><i class="fa fa-comments"></i> <a href="#"> {{poll.numberOfComments}} comments</a></small>
           <small><i class="fa fa-check"></i> {{poll.numberOfAnswers}} answers</small>
         </div>
 
@@ -91,7 +89,9 @@
     <!--.Add Scripts Below This Line-->
         <script src="lib/jquery.js"></script>
         <script src="lib/bootstrap.js"></script>
+        <script src="js/select2.js"></script>
         <script src="js/angular.min.js"></script>
+        <script src="js/angular-ui-select2/select2.js"></script>
         <script src="js/controller/homecontroller.js"></script>
     <!--/.Scripts-->
   </body>
