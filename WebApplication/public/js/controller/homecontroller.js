@@ -15,9 +15,21 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http) {
         question:"",
         choices:[]
     }
+    $scope.getCurrentUser=function(){
+        return "Timothyc";
+    }
 
-    $scope.addPoll=function(polls, newPoll){
-        polls.push(angular.copy(newPoll));
+    $scope.createPost=function(newPoll){
+
+        var post = {
+                        poll:newPoll,
+                        numberOfComments:0,
+                        numberOfAnswers:0,
+                        dateTime:"summited 1 hour ago",
+                        author: $scope.getCurrentUser()
+                    }
+
+        $scope.posts.push(angular.copy(post));
 
          var poll={
                     question:"",
@@ -27,36 +39,27 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http) {
         $scope.isCreatePollExpanded=false;
     }
 
-    $scope.polls=[
-        {
-            question:"Lorem ipsum dolor sit amet, consectetur?",
-            dateTime:"summited 3 hour ago",
-            author:"timothychan",
+    $scope.posts=[
+        {poll:{question:"Lorem ipsum dolor sit amet, consectetur?",
+                choices:["yes","no"]
+            },
             numberOfComments:90,
-            numberOfAnswers:6
+            numberOfAnswers:6,
+            dateTime:"summited 3 hour ago",
+            author:"timothychan"
         },
         {
-            question:"Lorem ipsum dolor sit amet, consectetur?",
-            dateTime:"summited 3 hour ago",
-            author:"bobby",
+            poll:{
+                question:"Lorem ipsum dolor sit amet, consectetur?",
+                choices:["yes","no"]
+            },
             numberOfComments:90,
-            numberOfAnswers:6
-        },
-        {
-            question:"Lorem ipsum dolor sit amet, consectetur?",
+            numberOfAnswers:6,
             dateTime:"summited 3 hour ago",
-            author:"timothychan",
-            numberOfComments:90,
-            numberOfAnswers:6
-        },
-        {
-            question:"Lorem ipsum dolor sit amet, consectetur?",
-            dateTime:"summited 3 hour ago",
-            author:"timothychan",
-            numberOfComments:90,
-            numberOfAnswers:6
+            author:"timothychan"
         }
-    ];
+    ]
+
     $scope.expandCreatePoll=function(){
         $scope.isCreatePollExpanded=true;
     }

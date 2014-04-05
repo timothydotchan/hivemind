@@ -68,23 +68,21 @@
             </div>
          </div>
           </br>
-          <button style="margin-left:265px;" class="btn btn-success" ng-click="addPoll(polls, newPoll)">Post</button>
+          <button style="margin-left:265px;" class="btn btn-success" ng-click="createPost(newPoll)">Post</button>
 
           <button class="btn btn-default" ng-click="hideCreatePoll()">Hide</button>
         </form>
 
         <h3>Open Polls</h3>
-        <div ng-repeat="poll in polls">
+        <div ng-repeat="post in posts">
 
           <img class="user-profile-post-picture" src="http://a.disquscdn.com/1396297849/images/noavatar92.png" style="height:36px; width:36px"/>
 
-          <h4><a>{{poll.question}}</a></h4>
-          <small>{{poll.dateTime}} by <a href="#">{{poll.author}} </a> </small>
-          <small><i class="fa fa-comments"></i> <a href="#"> {{poll.numberOfComments}} comments</a></small>
-          <small><i class="fa fa-check"></i> {{poll.numberOfAnswers}} answers</small>
+          <h4><a>{{post.poll.question}}</a></h4>
+          <small>{{post.dateTime}} by <a href="#">{{post.author}} </a> </small>
+          <small><i class="fa fa-comments"></i> <a href="#"> {{post.numberOfComments}} comments</a></small>
+          <small><i class="fa fa-check"></i> {{post.numberOfAnswers}} answers</small>
         </div>
-
-
 
     <!--.Add Scripts Below This Line-->
         <script src="lib/jquery.js"></script>
