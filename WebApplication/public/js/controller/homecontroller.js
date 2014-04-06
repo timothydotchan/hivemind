@@ -1,7 +1,4 @@
-var thinkRecursionApp= angular.module('thinkRecursionApp', ['ui.select2']);
-
-
-thinkRecursionApp.controller('HomeController', function ($scope, $http) {
+thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, postRepository) {
     $scope.isCreatePollExpanded=false;
 
     $scope.select2Options = {
@@ -15,12 +12,12 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http) {
         question:"",
         choices:[]
     }
+
     $scope.getCurrentUser=function(){
         return "Timothyc";
     }
 
     $scope.createPost=function(newPoll){
-
         var post = {
                         poll:newPoll,
                         numberOfComments:0,
@@ -39,49 +36,27 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http) {
         $scope.isCreatePollExpanded=false;
     }
 
-    $scope.posts=[
-        {poll:{question:"Lorem ipsum dolor sit amet, consectetur?",
-                choices:["yes","no"]
-            },
-            numberOfComments:90,
-            numberOfAnswers:6,
-            dateTime:"summited 3 hour ago",
-            author:"timothychan"
-        },
-        {
-            poll:{
-                question:"Lorem ipsum dolor sit amet, consectetur?",
-                choices:["yes","no"]
-            },
-            numberOfComments:90,
-            numberOfAnswers:6,
-            dateTime:"summited 3 hour ago",
-            author:"timothychan"
-        }
-    ]
 
     $scope.expandCreatePoll=function(){
         $scope.isCreatePollExpanded=true;
     }
+
     $scope.hideCreatePoll=function(){
         $scope.isCreatePollExpanded=false;
     }
 
 
-/*
-    $scope.fetchData=function(){
-            $http.get("/api/test").
-                success(function(data, status, headers, config) {
-                       angular.copy(data,$scope.testData);
-                       alert($scope.testData[0].title)
-            }).   
-               error(function(data, status, headers, config) {
-            }); 
-    }
-*/
-
     $scope.init=function(){
 
+      postRepository.get().then(
+            function(posts) {
+                $scope.posts=angular.copy(posts);
+            },function(error) { 
+                alert('error occurred');
+            }
+        );
     }
+
     $scope.init();
+
 });
