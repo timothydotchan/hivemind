@@ -24,8 +24,8 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, post
     $scope.createPost=function(newPoll){
         var post = {
                         poll:newPoll,
-                        numberOfComments:0,
-                        numberOfAnswers:0,
+                        comments:[],
+                        votes:[],
                         createdOn: new Date(),
                         user: $scope.getCurrentUser()
                     }
@@ -39,7 +39,6 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, post
         $scope.newPoll= angular.copy(poll);
         $scope.isCreatePollExpanded=false;
     }
-
 
     $scope.expandCreatePoll=function(){
         $scope.isCreatePollExpanded=true;

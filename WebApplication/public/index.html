@@ -80,8 +80,8 @@
 
           <h4><a>{{post.poll.question}}</a></h4>
           <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-          <small><i class="fa fa-comments"></i> <a href="#"> {{post.numberOfComments}} comments</a></small>
-          <small><i class="fa fa-check"></i> {{post.numberOfAnswers}} answers</small>
+          <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
+          <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
         </div>
 
     <!--.Add Scripts Below This Line-->
