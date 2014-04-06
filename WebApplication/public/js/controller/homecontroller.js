@@ -14,7 +14,11 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, post
     }
 
     $scope.getCurrentUser=function(){
-        return "Timothyc";
+        return {
+             id:"123",
+             name:"Timothyc",
+             profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+        };
     }
 
     $scope.createPost=function(newPoll){
@@ -23,7 +27,7 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, post
                         numberOfComments:0,
                         numberOfAnswers:0,
                         createdOn: new Date(),
-                        author: $scope.getCurrentUser()
+                        user: $scope.getCurrentUser()
                     }
 
         $scope.posts.push(angular.copy(post));

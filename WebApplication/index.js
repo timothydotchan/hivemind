@@ -22,7 +22,11 @@ app.get('/api/post',function(req,res){
             numberOfComments:90,
             numberOfAnswers:6,
             createdOn: new Date(),
-            author:"timothychan"
+            user: {
+             id:"123",
+             name:"Timothyc",
+             profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+            }
         },
         {
             poll:{
@@ -32,10 +36,13 @@ app.get('/api/post',function(req,res){
             numberOfComments:90,
             numberOfAnswers:6,
             createdOn: new Date(),
-            author:"timothychan"
+            user: {
+             id:"123",
+             name:"Timothyc",
+             profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+            }
         }
     ]
-
     res.json(posts);
 })
 
