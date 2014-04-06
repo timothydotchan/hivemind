@@ -22,7 +22,7 @@ thinkRecursionApp.controller('HomeController', function ($scope, $http, $q, post
                         poll:newPoll,
                         numberOfComments:0,
                         numberOfAnswers:0,
-                        dateTime:"summited 1 hour ago",
+                        createdOn: new Date(),
                         author: $scope.getCurrentUser()
                     }
 
