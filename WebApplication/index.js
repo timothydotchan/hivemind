@@ -19,14 +19,59 @@ app.get('/api/post',function(req,res){
             poll:{question:"Lorem ipsum dolor sit amet, consectetur?",
                 choices:["yes","no"]
             },
-            numberOfComments:90,
-            numberOfAnswers:6,
             createdOn: new Date(),
             user: {
              id:"123",
              name:"Timothyc",
              profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
-            }
+            },
+            votes:[
+                {
+                    choice:"yes",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    choice:"yes",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    choice:"no",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                }
+            ],
+            comments:[
+                {
+
+                    createdOn: new Date(),
+                    text: "Nice Job!",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    createdOn: new Date(),
+                    text: "Yeah man nice job!",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                }
+            ]
         },
         {
             poll:{
@@ -40,7 +85,53 @@ app.get('/api/post',function(req,res){
              id:"123",
              name:"Timothyc",
              profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
-            }
+            },
+            votes:[
+                {
+                    choice:"yes",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    choice:"yes",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    choice:"no",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                }
+            ],
+            comments:[
+                {
+                    createdOn: new Date(),
+                    text: "Nice Job!",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                },
+                {
+                    createdOn: new Date(),
+                    text: "Yeah man nice job!",
+                    user: {
+                         id:"123",
+                         name:"Timothyc",
+                         profilePictureUrl:"http://a.disquscdn.com/1396297849/images/noavatar92.png",
+                    }
+                }
+            ]
         }
     ]
     res.json(posts);
