@@ -1,8 +1,12 @@
 .navbar{
     border-color: silver;
 }
-.user-profile-post-picture {
+
+.user-profile-post-picture-container {
     float:left;
+    height: 60px;
+}
+.user-profile-post-picture {
     margin-right: 10px; 
     margin-top: 5px; 
 }

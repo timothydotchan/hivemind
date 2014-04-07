@@ -76,12 +76,23 @@
         <h3>Open Polls</h3>
         <div ng-repeat="post in posts">
 
-          <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:36px; width:36px"/>
+          <div class="user-profile-post-picture-container">
+           <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:36px; width:36px"/>
+          </div>
 
-          <h4><a>{{post.poll.question}}</a></h4>
-          <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-          <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
-          <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
+          <h4 style="margin-bottom:1px;"><a>{{post.poll.question}}</a></h4>
+          <div>
+            <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+            <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
+            <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
+          </div>
+
+          <div>
+            <small>Vote </small>
+            <span ng-repeat="choice in post.poll.choices">
+              <small><a href="#"> {{choice}} </a></small>  
+            </span>
+          </div>
         </div>
 
     <!--.Add Scripts Below This Line-->
