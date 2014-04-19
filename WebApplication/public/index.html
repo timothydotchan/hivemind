@@ -87,45 +87,60 @@
             <div class="post-subheading">
               <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
             </div>
-            <h4 class="post-heading" style="margin-bottom:1px;">{{post.poll.question}}</h4>
+            <h4 class="post-heading" style="margin-bottom:1px;">{{post.poll.question}}
+
+              <span ng-repeat="choice in post.poll.choices">
+                <small><a href="#"> {{choice}} </a></small>  
+              </span>
+
+            </h4>
+
+
             <div class="post-attachment">
 
              <img class="user-profile-post-picture" ng-src="http://media.npr.org/assets/img/2014/04/18/clam_01_wide-10cd767af7fb4c4517b8eaf9687adac17fe23d8f-s3-c85.jpg"/>
             </div>
 
             <div class="post-subheading">
-              <span ng-repeat="choice in post.poll.choices">
-                <small><a href="#"> {{choice}} </a></small>  
-              </span>
-              <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
+
+              <small><i class="fa fa-list-alt"></i> <a href="#"> View Post</a></small>
+              <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comment</a></small>
               <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
             </div>
 
 
             <div class="post-comment-container">
-              <div class="comment">
-                <div class="user-profile-comment-picture-container">
-                   <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
-                </div>
+              <div class="comments">
 
-                    <div class="post-subheading">
-                      <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-                    </div>
-                    <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
-              </div>
-
-              <div class="comment">
-                <div class="user-profile-comment-picture-container">
-                   <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
-                </div>
-
-                  <div class="comment-body">
-                    <div class="post-subheading">
-                      <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-                    </div>
-                    <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
+                <div class="comment">
+                  <div class="user-profile-comment-picture-container">
+                     <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
                   </div>
+
+                      <div class="post-subheading">
+                        <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+                      </div>
+                      <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
+                </div>
+
+                <div class="comment">
+                  <div class="user-profile-comment-picture-container">
+                     <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
+                  </div>
+
+                    <div class="comment-body">
+                      <div class="post-subheading">
+                        <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+                      </div>
+                      <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
+                    </div>
+                </div>
               </div>
+
+              <div class="comment-see-more-comment">
+
+              </div>
+
             </div>
 
 

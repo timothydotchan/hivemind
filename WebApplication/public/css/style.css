@@ -62,6 +62,10 @@
     overflow: hidden;
 }
 
+.comment-see-more-comment{
+    border-top: 1px solid #E7E7E7;
+}
+
 
 /*
 .navbar{
