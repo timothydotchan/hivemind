@@ -110,6 +110,13 @@
 
 
             <div class="post-comment-container">
+
+
+              <div class="post-write-comment-container">
+
+               <input type="text" class="post-write-comment form-control input-sm" placeholder="Your comment here">
+               </div>
+
               <div class="comments">
 
                 <div class="comment" ng-repeat="comment in post.comments">
@@ -121,36 +128,15 @@
                       </div>
                       <p class="post-heading" style="margin-bottom:1px;">{{comment.text}}</p>
                 </div>
-
-<!--
-                <div class="comment">
-                  <div class="user-profile-comment-picture-container">
-                     <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
-                  </div>
-
-                    <div class="comment-body">
-                      <div class="post-subheading">
-                        <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-                      </div>
-                      <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
-                    </div>
-                </div>
--->
+                
               </div>
 
               <div class="comment-see-more-comment">
-
+                <small><a href="#">see more<a></small>
               </div>
 
             </div>
-
-
           </div>
-
-
-
-
-
         </div>
 
     <!--.Add Scripts Below This Line-->
