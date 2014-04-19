@@ -16,8 +16,19 @@ app.get('/api/post',function(req,res){
 
       var posts=[
         {
-            poll:{question:"Lorem ipsum dolor sit amet, consectetur?",
-                choices:["yes","no"]
+            poll:{
+                question:"Lorem ipsum dolor sit amet, consectetur?",
+                choices:["yes","no"],
+                attachments:[
+                    {
+                        type:"image",
+                        ref:"http://media.npr.org/assets/img/2014/04/18/clam_01_wide-10cd767af7fb4c4517b8eaf9687adac17fe23d8f-s3-c85.jpg"
+                    },
+                    {
+                        type:"image",
+                        ref:"http://media.npr.org/assets/img/2014/04/19/istock_000011425202medium_wide-59c924d6a9b633736f082c510c16b147fad4b15e-s3-c85.jpg"
+                    }
+                ]
             },
             createdOn: new Date(),
             user: {
