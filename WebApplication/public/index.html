@@ -54,45 +54,87 @@
     <!-- Begin page content -->
     <div class="container">
 
+
+      <div class="ask-the-mind-container">
         <h3>Ask the mind</h3>
         <div class="row">
-          <div class="col-xs-5">
+          <div class="col-xs-12">
             <input type="text" theme="bootstrap" ng-focus="expandCreatePoll()"class="form-control input-sm" placeholder="Type your question" ng-model="newPoll.question">
           </div>
         </div>
         <form role="form" ng-show="isCreatePollExpanded" >
           <div style="margin-top:10px">
             <div>
-              <input style="width:375px;"  type="text" ui-select2="select2Options" ng-model="newPoll.choices">
-               <p class="help-block">Hit enter to create a choice. Minimum 2 choices.</p>
+              <input style="width:90%;"type="text" ui-select2="select2Options"
+                     ng-model="newPoll.choices" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+              <button  class="btn btn-success btn-sm" ng-click="createPost(newPoll)">Post</button>
+              <!--
+              <button class="btn btn-default" ng-click="hideCreatePoll()">Hide</button>
+               <p style="text-align:right;" class="help-block">Hit enter to create a choice. Minimum 2 choices.</p>
+              -->
             </div>
          </div>
-          </br>
-          <button style="margin-left:265px;" class="btn btn-success" ng-click="createPost(newPoll)">Post</button>
-
-          <button class="btn btn-default" ng-click="hideCreatePoll()">Hide</button>
         </form>
+      </div>
 
-        <h3>Open Polls</h3>
-        <div ng-repeat="post in posts">
+        <div class="post" ng-repeat="post in posts">
 
           <div class="user-profile-post-picture-container">
            <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:36px; width:36px"/>
           </div>
 
-          <h4 style="margin-bottom:1px;"><a>{{post.poll.question}}</a></h4>
-          <div>
-            <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
-            <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
-            <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
+          <div class="post-body">
+            <div class="post-subheading">
+              <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+            </div>
+            <h4 class="post-heading" style="margin-bottom:1px;">{{post.poll.question}}</h4>
+            <div class="post-attachment">
+
+             <img class="user-profile-post-picture" ng-src="http://media.npr.org/assets/img/2014/04/18/clam_01_wide-10cd767af7fb4c4517b8eaf9687adac17fe23d8f-s3-c85.jpg"/>
+            </div>
+
+            <div class="post-subheading">
+              <span ng-repeat="choice in post.poll.choices">
+                <small><a href="#"> {{choice}} </a></small>  
+              </span>
+              <small><i class="fa fa-comments"></i> <a href="#"> {{post.comments.length}} comments</a></small>
+              <small><i class="fa fa-check"></i> {{post.votes.length}} answers</small>
+            </div>
+
+
+            <div class="post-comment-container">
+              <div class="comment">
+                <div class="user-profile-comment-picture-container">
+                   <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
+                </div>
+
+                    <div class="post-subheading">
+                      <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+                    </div>
+                    <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
+              </div>
+
+              <div class="comment">
+                <div class="user-profile-comment-picture-container">
+                   <img class="user-profile-post-picture" ng-src={{post.user.profilePictureUrl}} style="height:24px; width:24px"/>
+                </div>
+
+                  <div class="comment-body">
+                    <div class="post-subheading">
+                      <small>{{post.createdOn| date: 'short'}} by <a href="#">{{post.user.name}} </a> </small>
+                    </div>
+                    <p class="post-heading" style="margin-bottom:1px;">That is great man</p>
+                  </div>
+              </div>
+            </div>
+
+
           </div>
 
-          <div>
-            <small>Vote </small>
-            <span ng-repeat="choice in post.poll.choices">
-              <small><a href="#"> {{choice}} </a></small>  
-            </span>
-          </div>
+
+
+
+
         </div>
 
     <!--.Add Scripts Below This Line-->

@@ -1,17 +1,65 @@
+.box{
+    border: 1px solid silver;
+}
 .navbar{
     border-color: silver;
 }
 
 .user-profile-post-picture-container {
     float:left;
-    height: 60px;
 }
+
+.post-body{
+    overflow: hidden;
+}
+.post-attachment{
+
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
 .user-profile-post-picture {
     margin-right: 10px; 
     margin-top: 5px; 
 }
 #top{
     margin-bottom: 10px;
+}
+.post{
+
+    border-top: 1px solid #E7E7E7;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.post-heading{
+    margin-top:0px;
+}
+
+.post-subheading{
+    color:#898F9C;
+    font-size:13px;
+}
+
+.ask-the-mind-container {
+    padding: 5px;
+    padding-bottom: 15px;
+}
+.ask-the-mind-container-buttons{
+
+}
+.post-comment-container{
+    border-top: 1px solid #E7E7E7;
+    margin-top: 5px;
+    padding: 2px;
+
+}
+.user-profile-comment-picture-container {
+    float:left;
+}
+
+.comment-body{
+    overflow: hidden;
 }
 
 
